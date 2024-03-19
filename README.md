@@ -11,4 +11,8 @@ To start, I create a folder named Share containing a Notepad++ installer on the 
 <img src="https://i.imgur.com/dpfEvRd.png" alt="Share"/>
 <img src="https://i.imgur.com/J1EY5LN.png" alt="Share"/>
 <br/>
-Now that the installer is accessable, I create the GPO. 
+Now that the installer is accessable, I create a GPO link for my _DOMAIN_COMPUTERS Organizational Unit (OU) called Notepad++ Install. Under Group Policy Management Editor, I created a package that points to the N++ installer in the network share. I then run /gpupdate on the DC and client to initiate the Group Policy update.
+<img src="https://i.imgur.com/rlsYGrN.png" alt="GPO Link"/>
+<img src="https://i.imgur.com/yVq0tlW.png" alt="GPME Package"/>
+<img src="https://i.imgur.com/g7RTKef.png" alt="/gpupdate force"/>
+<br/>
