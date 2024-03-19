@@ -1,0 +1,37 @@
+<?define name = "Notepad++"?>
+<?define exe = "npp.8.6.4.Installer.x64.exe"?>
+<?define path = "C:\Users\Jack\Desktop\np"?>
+<?define silentArgs = "/S"?>
+<?define version = "8.6.4"?>
+<?define publisher = "letsdoautomation"?>
+<?define guid = "fd2480ff-e46b-43c7-82f8-e510b2e0f33c"?>
+
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+        <Package Name="$(var.name)" Manufacturer="$(var.publisher)" Version="$(var.version)"
+                UpgradeCode="$(var.guid)" Scope="perMachine">
+
+                <Media Id="1" Cabinet="setup.cab" EmbedCab="yes" />
+
+                <Feature Id="InstallFeature" Title="Install Feature">
+                        <ComponentRef Id="file" />
+                </Feature>
+
+                <CustomAction Id="run_exe" Return="asyncWait" Execute="commit"
+                        ExeCommand="$(var.silentArgs)" HideTarget="yes" Impersonate="no"
+                        FileRef="executable" />
+
+                <InstallExecuteSequence>
+                        <Custom Action="run_exe" After="InstallFiles"
+                                Condition="NOT Installed AND NOT REMOVE" />
+                </InstallExecuteSequence>
+
+                <StandardDirectory Id="TempFolder">
+                        <Directory Id="INSTALLLOCATION" Name="$(var.guid)">
+                                <Component Id="file" DiskId="1">
+                                        <File Id="executable" Name="$(var.exe)"
+                                                Source="$(var.path)\$(var.exe)" />
+                                </Component>
+                        </Directory>
+                </StandardDirectory>
+        </Package>
+</Wix>
