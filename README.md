@@ -1,6 +1,6 @@
 # Configuring Group Policy
 <h2>Description</h2>
-This is a walkthrough on creating a Group Policy Object (GPO) to creates a File Share and install Notepad++ to connected Windows 10 clients. In the future, If I scale up the number of clients, having a GPO handle install this software is much faster than manually installing it on every machine.
+This is a walkthrough on creating a Group Policy Object (GPO) to install Notepad++ to connected Windows 10 clients. This GPO grabs the Notepad++ instal from a File Share named Share on the network. In the future, If I scale up the number of clients, having a GPO handle install this software is much faster than manually installing it on every machine.
 <h2>Environments Used </h2>
 - <b>Windows Server 2019</b> (17763) </br>
 - <b>Windows 10</b> (22H2)
@@ -15,4 +15,7 @@ Now that the installer is accessable, I create a GPO link for my _DOMAIN_COMPUTE
 <img src="https://i.imgur.com/rlsYGrN.png" alt="GPO Link"/>
 <img src="https://i.imgur.com/yVq0tlW.png" alt="GPME Package"/>
 <img src="https://i.imgur.com/g7RTKef.png" alt="/gpupdate force"/>
+<br/>
+After restarting, I'm able to log in and open Notepad++ on my machines.
+<img src="https://i.imgur.com/CBM2u7O.png" alt="Notepad++"/>
 <br/>
