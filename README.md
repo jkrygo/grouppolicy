@@ -4,8 +4,6 @@ This is a walkthrough on creating a Group Policy Object (GPO) to install Notepad
 <h2>Environments Used</h2>
 - <b>Windows Server 2019</b> (17763) </br>
 - <b>Windows 10</b> (22H2)
-<h2>Utilities Used</h2>
-- [WiX Toolset](https://wixtoolset.org/)
 <h2>Group Policy Configuration Walkthrough</h2> 
 To start, I create a folder named Share containing a Notepad++ installer and image on the Domain Controller. I configure Share Permissions to allow Authenticated Users to read from the folder, and to allow Domain Admins to have Full Control. When I check into my Windows 10 client, the Share folder appears when accessing \\DC\.
 <img src="https://i.imgur.com/dpfEvRd.png" alt="Share"/>
@@ -25,4 +23,4 @@ Now that Notepad++ is installed, I created another GPO that changes the desktop 
 <img src="https://i.imgur.com/bqWuPwn.png" alt="Black Screen"/>
 <br/>
 <h2>Issues </h2>
-Outside of the desktop background issue, the main issue I ran into was forgetting that the Notepad++ installer was an .exe and not a .msi. This probably isn't the safest or most ideal way to handle this, but for the purpose of really wanting to do this in a lab environment I repackaged the .exe as an .msi using This site was built using WiX Toolset.
+Outside of the desktop background issue, the main issue I ran into was forgetting that the Notepad++ installer was an .exe and not a .msi. This probably isn't the safest or most ideal way to handle this, but for the purpose of really wanting to do this in a lab environment and seeing if it would work properly, I repackaged the .exe as an .msi using WiX Toolset (https://wixtoolset.org/). I've included the WiX Source File in this repo.
