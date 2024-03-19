@@ -1,11 +1,14 @@
 # Configuring Group Policy
 <h2>Description</h2>
-This is a simple Active Directory home lab. I've set up Windows Server 2019 on VirtualBox to create a Domain Controller that houses Active Directory. The Domain Controller has two network adapters, one that connects my external network, and the other that connects to the clients running Windows 10 on the internal network. Remote Access Services and Network Address Translation are configured so the clients on the internal network can access the internet through the Domain Controller. DHCP is configured to automatically assign IP addresses to clients. A PowerShell script is used automatically create 1,000 users.
+This is a walkthrough on creating a Group Policy Object (GPO) to creates a File Share and install Notepad++ to connected Windows 10 clients. In the future, If I scale up the number of clients, having a GPO handle install this software is much faster than manually installing it on every machine.
 <h2>Environments Used </h2>
 - <b>Windows Server 2019</b> (17763) </br>
 - <b>Windows 10</b> (22H2)
 <h2>Utilities Used</h2>
 - <b>PowerShell</b>
-<h2>Home Lab Diagram</h2> 
-<img src="https://i.imgur.com/dpFmLFm.png" height="80%" width="80%" alt="Home Lab Diagram"/>
+<h2>Group Policy Configuration Walkthrough</h2> 
+To start, I create a folder named Share containing a Notepad++ installer on the Domain Controller. I configure Share Permissions to allow Authenticated Users to read from the folder, and to allow Domain Admins to have Full Control. When I check into my Windows 10 client, the Share folder appears when accessing \\DC\.
+<img src="https://i.imgur.com/dpfEvRd.png" alt="Share"/>
+<img src="https://i.imgur.com/J1EY5LN.png" alt="Share"/>
 <br/>
+Now that the installer is accessable, I create the GPO. 
