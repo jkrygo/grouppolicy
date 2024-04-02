@@ -17,10 +17,10 @@ Now that the installer is accessable, I create a GPO link for my _DOMAIN_COMPUTE
 After restarting, I'm able to log in and verify Notepad++ is installed to the client.
 <img src="https://i.imgur.com/CBM2u7O.png" alt="Notepad++"/>
 <br/>
-Now that Notepad++ is installed, I created another GPO that changes the desktop wallpaper to another image. I linked it to the _USERS OU so it will apply to every user that isn't the admin. I ran gpupdate /force and restart the client. The policy was enforced.... however, I had forgotten that non-activated versions of Windows cant be personalized, so the background was changed to black screen. Oops. 
+Now that Notepad++ is installed, I created another GPO that changes the desktop wallpaper to another image. I linked it to the _USERS OU so it will apply to every user that isn't the admin. I ran gpupdate /force and restart the client.
 <img src="https://i.imgur.com/knc61v0.png" alt="Desktop Wallpaper GPO"/>
 <img src="https://i.imgur.com/WdWgCNP.png" alt="GPO Linked to _USERS"/>
-<img src="https://i.imgur.com/bqWuPwn.png" alt="Black Screen"/>
+<img src="https://i.imgur.com/6yQdste.jpeg" alt="Bliss"/>
 <br/>
 <h2>Issues </h2>
-Outside of the desktop background issue, the main issue I ran into was forgetting that the Notepad++ installer was an .exe and not a .msi. This probably isn't the safest or most ideal way to handle this, but for the purpose of really wanting to do this in a lab environment and seeing if it would work properly, I repackaged the .exe as an .msi using WiX Toolset (https://wixtoolset.org/). I've included the WiX Source File in this repo.
+The main issue I ran into was forgetting that the Notepad++ installer was an .exe and not a .msi. This probably isn't the safest or most ideal way to handle this, but for the purpose of really wanting to do this in a lab environment, I repackaged the .exe as an .msi using WiX Toolset (https://wixtoolset.org/). I've included the WiX Source File in this repo.
