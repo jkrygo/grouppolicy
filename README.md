@@ -1,4 +1,4 @@
-# Deploying Software Using Group Policy
+# Deploying Software With Group Policy
 <h2>Description</h2>
 This is a walkthrough on creating a Group Policy Object (GPO) to install Notepad++ and update the desktop wallpaper of connected Windows 10 clients. This GPO grabs the Notepad++ install and image from a File Share named Share on the network. In the future, If I scale up the number of clients, having a GPO handle install updates is much faster than manually updating every machine on the network.
 <h2>Environments Used</h2>
