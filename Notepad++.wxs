@@ -3,7 +3,7 @@
 <?define path = "C:\Users\Jack\Desktop\np"?>
 <?define silentArgs = "/S"?>
 <?define version = "8.6.4"?>
-<?define publisher = "letsdoautomation"?>
+<?define publisher = "jck"?>
 <?define guid = "fd2480ff-e46b-43c7-82f8-e510b2e0f33c"?>
 
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
